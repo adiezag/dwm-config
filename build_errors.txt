@@ -1,0 +1,165 @@
+cc -c -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os -I/usr/X11R6/include -I/usr/include/freetype2 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700L -DVERSION=\"6.6\" -DXINERAMA dwm.c
+In file included from dwm.c:345:
+config.h:43:23: error: ‘tile’ undeclared here (not in a function); did you mean ‘time’?
+   43 |         { "[]=",      tile },    /* first entry is default */
+      |                       ^~~~
+      |                       time
+dwm.c: In function ‘swallow’:
+dwm.c:499:30: error: ‘swallowfloating’ undeclared (first use in this function)
+  499 |         if (c->noswallow && !swallowfloating && c->isfloating)
+      |                              ^~~~~~~~~~~~~~~
+dwm.c:499:30: note: each undeclared identifier is reported only once for each function it appears in
+dwm.c: In function ‘buttonpress’:
+dwm.c:579:52: error: ‘test’ undeclared (first use in this function); did you mean ‘text’?
+  579 |                                         x += TEXTW(test) - lrpad;
+      |                                                    ^~~~
+dwm.c:70:61: note: in definition of macro ‘TEXTW’
+   70 | #define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)
+      |                                                             ^
+dwm.c:559:30: warning: unused variable ‘occ’ [-Wunused-variable]
+  559 |                 unsigned int occ = 0;
+      |                              ^~~
+dwm.c: In function ‘createmon’:
+dwm.c:804:24: error: ‘showtitle’ undeclared (first use in this function); did you mean ‘showhide’?
+  804 |         m->showtitle = showtitle;
+      |                        ^~~~~~~~~
+      |                        showhide
+dwm.c:805:23: error: ‘showtags’ undeclared (first use in this function)
+  805 |         m->showtags = showtags;
+      |                       ^~~~~~~~
+dwm.c:806:25: error: ‘showlayout’ undeclared (first use in this function); did you mean ‘setlayout’?
+  806 |         m->showlayout = showlayout;
+      |                         ^~~~~~~~~~
+      |                         setlayout
+dwm.c:807:25: error: ‘showstatus’ undeclared (first use in this function); did you mean ‘si_status’?
+  807 |         m->showstatus = showstatus;
+      |                         ^~~~~~~~~~
+      |                         si_status
+dwm.c:808:27: error: ‘showfloating’ undeclared (first use in this function)
+  808 |         m->showfloating = showfloating;
+      |                           ^~~~~~~~~~~~
+dwm.c:810:21: error: ‘gappih’ undeclared (first use in this function)
+  810 |         m->gappih = gappih;
+      |                     ^~~~~~
+dwm.c:811:21: error: ‘gappiv’ undeclared (first use in this function)
+  811 |         m->gappiv = gappiv;
+      |                     ^~~~~~
+dwm.c:812:21: error: ‘gappoh’ undeclared (first use in this function)
+  812 |         m->gappoh = gappoh;
+      |                     ^~~~~~
+dwm.c:813:21: error: ‘gappov’ undeclared (first use in this function)
+  813 |         m->gappov = gappov;
+      |                     ^~~~~~
+dwm.c: In function ‘getstatusbarpid’:
+dwm.c:1097:42: error: ‘STATUSBAR’ undeclared (first use in this function)
+ 1097 |                         if (!strcmp(str, STATUSBAR))
+      |                                          ^~~~~~~~~
+dwm.c:1104:37: error: expected ‘)’ before ‘STATUSBAR’
+ 1104 |         if (!(fp = popen("pidof -s "STATUSBAR, "r")))
+      |                         ~           ^~~~~~~~~
+      |                                     )
+dwm.c:1104:20: error: too few arguments to function ‘popen’; expected 2, have 1
+ 1104 |         if (!(fp = popen("pidof -s "STATUSBAR, "r")))
+      |                    ^~~~~
+In file included from dwm.c:27:
+/usr/include/stdio.h:893:14: note: declared here
+  893 | extern FILE *popen (const char *__command, const char *__modes)
+      |              ^~~~~
+dwm.c:1104:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+ 1104 |         if (!(fp = popen("pidof -s "STATUSBAR, "r")))
+      |         ^~
+dwm.c:1106:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+ 1106 |                 fgets(buf, sizeof(buf), fp);
+      |                 ^~~~~
+dwm.c: In function ‘loadxrdb’:
+dwm.c:1297:9: error: implicit declaration of function ‘XRDB_LOAD_COLOR’; did you mean ‘XDRB_LOAD_COLOR’? [-Wimplicit-function-declaration]
+ 1297 |         XRDB_LOAD_COLOR("dwm.normbordercolor", normbordercolor);
+      |         ^~~~~~~~~~~~~~~
+      |         XDRB_LOAD_COLOR
+dwm.c:1297:48: error: ‘normbordercolor’ undeclared (first use in this function)
+ 1297 |         XRDB_LOAD_COLOR("dwm.normbordercolor", normbordercolor);
+      |                                                ^~~~~~~~~~~~~~~
+dwm.c:1298:44: error: ‘normbgcolor’ undeclared (first use in this function)
+ 1298 |         XRDB_LOAD_COLOR("dwm.normbgcolor", normbgcolor);
+      |                                            ^~~~~~~~~~~
+dwm.c:1299:44: error: ‘normfgcolor’ undeclared (first use in this function)
+ 1299 |         XRDB_LOAD_COLOR("dwm.normfgcolor", normfgcolor);
+      |                                            ^~~~~~~~~~~
+dwm.c:1300:47: error: ‘selbordercolor’ undeclared (first use in this function)
+ 1300 |         XRDB_LOAD_COLOR("dwm.selbordercolor", selbordercolor);
+      |                                               ^~~~~~~~~~~~~~
+dwm.c:1301:43: error: ‘selbgcolor’ undeclared (first use in this function)
+ 1301 |         XRDB_LOAD_COLOR("dwm.selbgcolor", selbgcolor);
+      |                                           ^~~~~~~~~~
+dwm.c:1302:43: error: ‘selfgcolor’ undeclared (first use in this function)
+ 1302 |         XRDB_LOAD_COLOR("dwm.selfgcolor", selfgcolor);
+      |                                           ^~~~~~~~~~
+dwm.c:1286:12: warning: unused variable ‘value’ [-Wunused-variable]
+ 1286 |   XrmValue value;
+      |            ^~~~~
+dwm.c:1285:9: warning: unused variable ‘type’ [-Wunused-variable]
+ 1285 |   char *type;
+      |         ^~~~
+dwm.c: In function ‘setup’:
+dwm.c:1924:55: error: passing argument 2 of ‘drw_scm_create’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1924 |                 scheme[i] = drw_scm_create(drw, colors[i], 3);
+      |                                                 ~~~~~~^~~
+      |                                                       |
+      |                                                       const char **
+In file included from dwm.c:51:
+drw.h:43:37: note: expected ‘char **’ but argument is of type ‘const char **’
+   43 | Clr *drw_scm_create(Drw *drw, char *clrnames[], size_t clrcount);
+      |                               ~~~~~~^~~~~~~~~~
+dwm.c: In function ‘spawntag’:
+dwm.c:2078:40: error: ‘tagexec’ undeclared (first use in this function)
+ 2078 |                                 spawn(&tagexec[i]);
+      |                                        ^~~~~~~
+dwm.c: In function ‘xrdb’:
+dwm.c:2737:55: error: passing argument 2 of ‘drw_scm_create’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 2737 |                 scheme[i] = drw_scm_create(drw, colors[i], 3);
+      |                                                 ~~~~~~^~~
+      |                                                       |
+      |                                                       const char **
+drw.h:43:37: note: expected ‘char **’ but argument is of type ‘const char **’
+   43 | Clr *drw_scm_create(Drw *drw, char *clrnames[], size_t clrcount);
+      |                               ~~~~~~^~~~~~~~~~
+dwm.c: At top level:
+dwm.c:1101: error: unterminated #else
+ 1101 | #ifdef __FreeBSD__
+dwm.c:256:13: warning: ‘sigchld’ declared ‘static’ but never defined [-Wunused-function]
+  256 | static void sigchld(int unused);
+      |             ^~~~~~~
+dwm.c:2732:1: warning: ‘xrdb’ defined but not used [-Wunused-function]
+ 2732 | xrdb(const Arg *arg)
+      | ^~~~
+dwm.c:2160:1: warning: ‘togglesticky’ defined but not used [-Wunused-function]
+ 2160 | togglesticky(const Arg *arg)
+      | ^~~~~~~~~~~~
+dwm.c:2131:1: warning: ‘togglebarfloat’ defined but not used [-Wunused-function]
+ 2131 | togglebarfloat(const Arg *arg)
+      | ^~~~~~~~~~~~~~
+dwm.c:2124:1: warning: ‘togglebarstatus’ defined but not used [-Wunused-function]
+ 2124 | togglebarstatus(const Arg *arg)
+      | ^~~~~~~~~~~~~~~
+dwm.c:2117:1: warning: ‘togglebarlt’ defined but not used [-Wunused-function]
+ 2117 | togglebarlt(const Arg *arg)
+      | ^~~~~~~~~~~
+dwm.c:2110:1: warning: ‘togglebartitle’ defined but not used [-Wunused-function]
+ 2110 | togglebartitle(const Arg *arg)
+      | ^~~~~~~~~~~~~~
+dwm.c:2103:1: warning: ‘togglebartags’ defined but not used [-Wunused-function]
+ 2103 | togglebartags(const Arg *arg)
+      | ^~~~~~~~~~~~~
+dwm.c:2073:1: warning: ‘spawntag’ defined but not used [-Wunused-function]
+ 2073 | spawntag(const Arg *arg)
+      | ^~~~~~~~
+dwm.c:1983:1: warning: ‘sigstatusbar’ defined but not used [-Wunused-function]
+ 1983 | sigstatusbar(const Arg *arg)
+      | ^~~~~~~~~~~~
+dwm.c:1549:1: warning: ‘pushstack’ defined but not used [-Wunused-function]
+ 1549 | pushstack(const Arg *arg) {
+      | ^~~~~~~~~
+dwm.c:1012:1: warning: ‘focusmaster’ defined but not used [-Wunused-function]
+ 1012 | focusmaster(const Arg *arg)
+      | ^~~~~~~~~~~
+make: *** [Makefile:12: dwm.o] Error 1

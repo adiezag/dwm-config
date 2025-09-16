@@ -8,7 +8,6 @@ static const unsigned int gappiv    = 10;       /* vert inner gap between window
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
-static const int swallowfloating = 0;
 static const int showbar            = 1;        /* 0 means no bar */
 static const int showtitle          = 1;        /* 0 means no title */
 static const int showtags           = 1;        /* 0 means no tags */
@@ -28,11 +27,6 @@ static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
        [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
-       [SchemeStatus] = {normfgcolor, normbgcolor, normbgcolor},
-       [SchemeTagsSel] = {normfgcolor, normbgcolor, normbgcolor},
-       [SchemeTagsNorm] = {selbordercolor, normbgcolor, normbgcolor},
-       [SchemeInfoSel] = {normfgcolor, normbgcolor, normbgcolor},
-       [SchemeInfoNorm] = {normfgcolor, normbgcolor, normbgcolor}
 };
 
 /* tagging */
@@ -60,11 +54,6 @@ static const int refreshrate = 120;  /* refresh rate (per second) for client mov
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
 
-static const float mfact = 0.55;
-static const int nmaster = 1;
-static const int resizehints = 1;
-static const int lockfullscreen = 0;
-
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
@@ -83,19 +72,9 @@ static const Layout layouts[] = {
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
 };
-static const Arg tagexec[] = {
-	{ .v = termcmd },
-	{ .v = termcmd },
-	{ .v = termcmd },
-	{ .v = termcmd },
-	{ .v = termcmd },
-	{ .v = termcmd },
-	{ .v = termcmd },
-	{ .v = termcmd },
-	{ .v = termcmd },
-};
+
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -117,9 +96,7 @@ static const Arg tagexec[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-/*static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };*/
-
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
